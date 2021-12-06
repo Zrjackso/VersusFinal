@@ -4,49 +4,46 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Versus Login Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
-<body>
+<body style="background-color:#eaeaea;">
     <form id="form1" runat="server">
-        <div>
-            <table>
-                <asp:Label ID="Label2" runat="server" Text="Log In!"></asp:Label>
-                <tr>
-                <td>
-                    <asp:Label ID="Username" runat="server" Text="Username"></asp:Label>
-
-                </td>
-
-                <td colspan="2">
-                    <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
-
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <asp:Label ID="Password" runat="server" Text="Password"></asp:Label>
-
-                </td>
-
-                <td colspan="2">
-                    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
-
-                </td>
-            </tr>
-            <tr>
-                <td> </td>
-                <td colspan="2"> 
-                    <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
-                </td>
-            </tr>
-                
-
-            </table>
-            
-
-
+        <div class="container">
+            <div class="row" style="padding-top:50px;">
+                <div class="col-sm-12 text-center">
+                    <h2>Versus Login</h2>
+                </div>
+            </div>
+            <div class="row" style="padding-top:50px;" >
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                    <div class="card" style="border-radius: 5px; background-color:#FFFFFF; -webkit-box-shadow: 0px 1px 8px 0px rgba(153,153,153,1); -moz-box-shadow: 0px 1px 8px 0px rgba(153,153,153,1); box-shadow: 0px 1px 8px 0px rgba(153,153,153,1);"">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <asp:Label ID="Username" runat="server" Text="Username"></asp:Label><br />
+                                <asp:TextBox ID="txtUsername" runat="server" CssClass="form-control"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <asp:Label ID="Password" runat="server" Text="Password"></asp:Label><br />
+                                <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
+                            </div>
+                            <div class="row" style="padding-top:20px;">
+                                <div class="col-sm-6 text-start"><a href="/Index.aspx" class="btn btn-success">Sign Up</a></div>
+                                <div class="col-sm-6 text-end"><asp:Button ID="btnSubmit" runat="server" Text="Login" OnClick="btnSubmit_Click" CssClass="btn btn-primary" /></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4"></div>
+            </div>
+            <div class="row" style="padding-top:20px;">
+                <div class="col-sm-12 text-center">
+                    <asp:Label ID="Label3" runat="server" ></asp:Label>
+                </div>
+            </div>
         </div>
-        <asp:Label ID="Label3" runat="server" Text="Log In!"></asp:Label>
     </form>
 </body>
 </html>

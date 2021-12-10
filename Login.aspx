@@ -13,7 +13,7 @@
         <div class="container">
             <div class="row" style="padding-top:50px;">
                 <div class="col-sm-12 text-center">
-                    <img src="versus_logo.jpeg" style="max-width:200px;"/>
+                    <img src="versus_logo.png" style="max-width:200px;"/>
                 </div>
             </div>
             <div class="row" style="padding-top:50px;" >

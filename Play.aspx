@@ -11,6 +11,16 @@
 <body style="background-color:#eaeaea;">
     <form id="form1" runat="server">
         <div class="container-fluid">
+        <div class="row" style="padding-bottom:30px; padding-top:30px;">
+            <div class="col-sm-4 text-center">
+                <h4>Player 1 Stats</h4>
+            </div>
+            <div class="col-sm-4 text-center">
+            </div>
+            <div class="col-sm-4 text-center">
+                <h4>Player 2 Stats</h4>
+            </div>
+        </div>
         <div class="row">
         <div class="col-sm-4">
         <div  id="leftbox" style="height: 600px; overflow: auto; background-color:#FFF;">
@@ -52,20 +62,52 @@
         </div>
         </div>
         <div class="col-sm-4 text-center">
+            <div class="row" >
+                <div class="col-sm-12">
+                    <h3>Match Info</h3>
+                </div>
+            </div>
             <div class="row" style="padding-top:50px;">
             <div id ="middlebox" class="card" style="border-radius: 5px; background-color:#FFFFFF; -webkit-box-shadow: 0px 1px 8px 0px rgba(153,153,153,1); -moz-box-shadow: 0px 1px 8px 0px rgba(153,153,153,1); box-shadow: 0px 1px 8px 0px rgba(153,153,153,1);"">
                 <div class="card-body">
-                <div class="row" style="padding-top:50px;">
-                    <div class="col-sm-4"></div>
-                    <div class="col-sm-4 text-center">
-                        <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-select">
-                            <asp:ListItem>Completions</asp:ListItem>
-                            <asp:ListItem>Attempts</asp:ListItem>
-                            <asp:ListItem>Yards</asp:ListItem>
-                            <asp:ListItem>Touchdowns</asp:ListItem>
-                            <asp:ListItem>Interceptions</asp:ListItem>
-                            <asp:ListItem>QBR</asp:ListItem>
-                        </asp:DropDownList>
+                <div class="row" style="padding-top:10px;">
+                    <div class="col-sm-6 text-center">
+                        <div class="form-group">
+                            <label>Bet On</label>
+                            <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-select">
+                                <asp:ListItem>Completions</asp:ListItem>
+                                <asp:ListItem>Attempts</asp:ListItem>
+                                <asp:ListItem>Yards</asp:ListItem>
+                                <asp:ListItem>Touchdowns</asp:ListItem>
+                                <asp:ListItem>Interceptions</asp:ListItem>
+                                <asp:ListItem>QBR</asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Betting Week</label>
+                                <select class="form-select">
+                                    <option>Week 1</option>
+                                    <option>Week 2</option>
+                                    <option>Week 3</option>
+                                    <option>Week 4</option>
+                                    <option>Week 5</option>
+                                    <option>Week 6</option>
+                                    <option>Week 7</option>
+                                    <option>Week 8</option>
+                                    <option>Week 9</option>
+                                    <option>Week 10</option>
+                                    <option>Week 11</option>
+                                    <option>Week 12</option>
+                                    <option>Week 13</option>
+                                    <option>Week 14</option>
+                                    <option>Week 15</option>
+                                    <option>Week 16</option>
+                                    <option>Week 17</option>
+                                    <option>Week 18</option>
+                                </select> 
+                            </div>
                     </div>
                 </div>
                 <div class="row" style="padding-top:50px;">
@@ -74,6 +116,10 @@
                         <div class="form-group">
                             <label>Player 1</label>
                             <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <label>Player 1 ID</label>
+                            <asp:TextBox ID="TextBox6" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
                     </div>
                     <div class="col-sm-4">
@@ -85,6 +131,10 @@
                             <label>Player 2</label>
                             <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
+                        <div class="form-group">
+                            <label>Player 2 ID</label>
+                            <asp:TextBox ID="TextBox8" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
                     </div>
                 </div>
                 <div class="row" style="padding-top:50px;">
@@ -95,11 +145,17 @@
                             <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
                         <br />
-                        <asp:Button ID="Button1" runat="server" Text="Bet!" CssClass="btn btn-primary" />
+                        <asp:Button ID="Button1" runat="server" Text="Place Bet" CssClass="btn btn-primary" />
                     </div>
                 </div>
                 </div>
+                
             </div>
+            </div>
+            <div class="row" style="padding-top:20px;">
+                <div class="col-sm-12 text-center">
+                    <a href="/Homepage.aspx" class="btn btn-danger">Home Page</a>
+                </div>
             </div>
         </div>
         <div class="col-sm-4 text-end">

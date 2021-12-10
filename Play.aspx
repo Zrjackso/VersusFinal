@@ -14,11 +14,31 @@
                 
             }
             #middlebox{
+                position:relative;
                 float:left; 
                 
                 width:20%;
                 
             }
+
+            #match{
+                position:absolute;
+                top: 5px;
+                left: 5px;
+            }
+
+            #player1{
+                position:absolute;
+                top: 500px;
+                left: 5px;
+            }
+
+            #player2{
+                position:absolute;
+                top: 500px;
+                left: 250px;
+            }
+
             #rightbox{
                 float:right;
                
@@ -68,7 +88,8 @@
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PROJECTF2156ConnectionString1 %>" ProviderName="<%$ ConnectionStrings:PROJECTF2156ConnectionString1.ProviderName %>" SelectCommand="SELECT [ID], [Player], [Tm], [Age], [Pos], [G], [GS], [Cmp], [Att], [Cmp%] AS column1, [Yds], [TD], [TD%] AS column2, [Int], [Int%] AS column3, [1D] AS column4, [Lng], [Y/A] AS column5, [AY/A] AS column6, [Y/C] AS column7, [Y/G] AS column8, [Rate], [QBR], [Sk] FROM [Passing]"></asp:SqlDataSource>
         </div>
         <div id ="middlebox";>
-
+            <div id="match";>
+                <asp:Label ID="Label1" runat="server" Text="Match Info" Font-Size="Larger"></asp:Label>
             <asp:DropDownList ID="DropDownList1" runat="server">
                 <asp:ListItem>Completions</asp:ListItem>
                 <asp:ListItem>Attempts</asp:ListItem>
@@ -77,10 +98,26 @@
                 <asp:ListItem>Interceptions</asp:ListItem>
                 <asp:ListItem>QBR</asp:ListItem>
             </asp:DropDownList>
+
+                <asp:TextBox ID="TextBox3" runat="server" Width="50" Wrap="False"></asp:TextBox>
+
+                <asp:Button ID="Button1" runat="server" Text="Submit" />
+                </div>
+            <div id="player1";>
+                <asp:Label ID="Label2" runat="server" Text="Player 1" Font-Size="Larger"></asp:Label>
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                <asp:Label ID="Label5" runat="server" Text="Player 1 ID"></asp:Label>
+                <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+                </div>
+
+            <div id="player2";>
+                <asp:Label ID="Label3" runat="server" Text="Player2" Font-Size="Larger"></asp:Label>
             <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-            <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
-            <asp:Button ID="Button1" runat="server" Text="Button" />
+                <asp:Label ID="Label4" runat="server" Text="Player 2 ID"></asp:Label>
+                <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                </div>
+            
+            
         </div>
 
          <div  id= "rightbox"; style="height: 600px; width: 300px; overflow: auto;">

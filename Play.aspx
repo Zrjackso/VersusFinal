@@ -4,33 +4,16 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
-
-    <style> 
-            #leftbox {
-                float:left; 
-                
-                width:40%;
-                
-            }
-            #middlebox{
-                float:left; 
-                
-                width:20%;
-                
-            }
-            #rightbox{
-                float:right;
-               
-                width:40%;
-                
-            }
-            
-        </style> 
+    <title>Versus Play Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
 </head>
-<body>
+<body style="background-color:#eaeaea;">
     <form id="form1" runat="server">
-        <div  id= "leftbox"; style="height: 600px; width: 300px; overflow: auto;">
+        <div class="container-fluid">
+        <div class="row">
+        <div class="col-sm-4">
+        <div  id="leftbox" style="height: 600px; overflow: auto; background-color:#FFF;">
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" EmptyDataText="There are no data records to display." AllowSorting="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                 <Columns>
                     <asp:CommandField ShowSelectButton="True" />
@@ -67,23 +50,60 @@
             </asp:GridView>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PROJECTF2156ConnectionString1 %>" ProviderName="<%$ ConnectionStrings:PROJECTF2156ConnectionString1.ProviderName %>" SelectCommand="SELECT [ID], [Player], [Tm], [Age], [Pos], [G], [GS], [Cmp], [Att], [Cmp%] AS column1, [Yds], [TD], [TD%] AS column2, [Int], [Int%] AS column3, [1D] AS column4, [Lng], [Y/A] AS column5, [AY/A] AS column6, [Y/C] AS column7, [Y/G] AS column8, [Rate], [QBR], [Sk] FROM [Passing]"></asp:SqlDataSource>
         </div>
-        <div id ="middlebox";>
-
-            <asp:DropDownList ID="DropDownList1" runat="server">
-                <asp:ListItem>Completions</asp:ListItem>
-                <asp:ListItem>Attempts</asp:ListItem>
-                <asp:ListItem>Yards</asp:ListItem>
-                <asp:ListItem>Touchdowns</asp:ListItem>
-                <asp:ListItem>Interceptions</asp:ListItem>
-                <asp:ListItem>QBR</asp:ListItem>
-            </asp:DropDownList>
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-            <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
-            <asp:Button ID="Button1" runat="server" Text="Button" />
         </div>
-
-         <div  id= "rightbox"; style="height: 600px; width: 300px; overflow: auto;">
+        <div class="col-sm-4 text-center">
+            <div class="row" style="padding-top:50px;">
+            <div id ="middlebox" class="card" style="border-radius: 5px; background-color:#FFFFFF; -webkit-box-shadow: 0px 1px 8px 0px rgba(153,153,153,1); -moz-box-shadow: 0px 1px 8px 0px rgba(153,153,153,1); box-shadow: 0px 1px 8px 0px rgba(153,153,153,1);"">
+                <div class="card-body">
+                <div class="row" style="padding-top:50px;">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-4 text-center">
+                        <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-select">
+                            <asp:ListItem>Completions</asp:ListItem>
+                            <asp:ListItem>Attempts</asp:ListItem>
+                            <asp:ListItem>Yards</asp:ListItem>
+                            <asp:ListItem>Touchdowns</asp:ListItem>
+                            <asp:ListItem>Interceptions</asp:ListItem>
+                            <asp:ListItem>QBR</asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+                </div>
+                <div class="row" style="padding-top:50px;">
+                    <div class="col-sm-4 text-start">
+                    
+                        <div class="form-group">
+                            <label>Player 1</label>
+                            <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <br />
+                        <h5>Versus</h5>
+                    </div>
+                    <div class="col-sm-4 text-end">
+                        <div class="form-group">
+                            <label>Player 2</label>
+                            <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="padding-top:50px;">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-4 text-center">
+                        <div class="form-group">
+                            <label>Bet Amount</label>
+                            <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                        <br />
+                        <asp:Button ID="Button1" runat="server" Text="Bet!" CssClass="btn btn-primary" />
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="col-sm-4 text-end">
+         <div  id="rightbox" style="height: 600px; overflow:auto; background-color:#FFF;">
             <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" EmptyDataText="There are no data records to display." AllowSorting="True" OnSelectedIndexChanged="GridView2_SelectedIndexChanged">
                 <Columns>
                     <asp:CommandField ShowSelectButton="True" />
@@ -120,7 +140,9 @@
             </asp:GridView>
             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:PROJECTF2156ConnectionString1 %>" ProviderName="<%$ ConnectionStrings:PROJECTF2156ConnectionString1.ProviderName %>" SelectCommand="SELECT [ID], [Player], [Tm], [Age], [Pos], [G], [GS], [Cmp], [Att], [Cmp%] AS column1, [Yds], [TD], [TD%] AS column2, [Int], [Int%] AS column3, [1D] AS column4, [Lng], [Y/A] AS column5, [AY/A] AS column6, [Y/C] AS column7, [Y/G] AS column8, [Rate], [QBR], [Sk] FROM [Passing]"></asp:SqlDataSource>
         </div>
-
+        </div>
+        </div>
+        </div>
 
         
 

@@ -19,7 +19,7 @@
             <div class="row" style="padding-top:50px;" >
                 <div class="col-sm-4"></div>
                 <div class="col-sm-4">
-                    <div class="card" style="border-radius: 5px; background-color:#FFFFFF; -webkit-box-shadow: 0px 1px 8px 0px rgba(153,153,153,1); -moz-box-shadow: 0px 1px 8px 0px rgba(153,153,153,1); box-shadow: 0px 1px 8px 0px rgba(153,153,153,1);"">
+                    <div class="card" style="border-radius: 5px; background-color:#FFFFFF; -webkit-box-shadow: 0px 1px 8px 0px rgba(153,153,153,1); -moz-box-shadow: 0px 1px 8px 0px rgba(153,153,153,1); box-shadow: 0px 1px 8px 0px rgba(153,153,153,1);">
                         <div class="card-body">
                             <div class="form-group">
                                 <asp:Label ID="Username" runat="server" Text="Username"></asp:Label><br />
